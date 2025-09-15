@@ -1,4 +1,4 @@
-# Plotting code for ion-dipole collision
+# Plotting code for ion-atom collision
 
 Run scattering.m to generate the plots.
 
