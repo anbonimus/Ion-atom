@@ -2,4 +2,4 @@
 
 Run scattering.m to generate the plots.
 
-Source data available in He and Li folder.
+Source data available at https://doi.org/10.5281/zenodo.17126614
