@@ -16,9 +16,6 @@ omega200=1.519e-10*0.2*2*pi;
 omega500=1.519e-10*0.5*2*pi;
 omega1000=1.519e-10*2*pi;
 
-TrappingPotential=@(m,omega,alpha,l,r) -0.5*alpha*(sqrt(m*omega).*(-2.*exp(-m*omega.*r.^2)./r/sqrt(pi)+erf(sqrt(m*omega)*r)./sqrt(m*omega)./r.^2)).^2+l*(l+1)./2/redmass./r.^2;
-Potentialatomion=@(redmass,alpha,l,r) -0.5*alpha./r.^4+l*(l+1)./2/redmass./r.^2;
-
 Li_pc=readtable('C:\Users\12107\OneDrive\Desktop\Li\Li_point_charge_cross_section.csv');
 omega50_Li=readtable('C:\Users\12107\OneDrive\Desktop\Li\Li_50kHz_cross_section.csv');
 omega100_Li=readtable('C:\Users\12107\OneDrive\Desktop\Li\Li_100kHz_cross_section.csv');
@@ -35,9 +32,9 @@ omega1000_He=readtable('He/He_1MHz_cross_section.csv');
 
 Ecol=logspace(-6,2,25)*3.166811e-06;
 
-semiclass_elastic=-4*pi/2/redmass*gamma(-2/3)/3/2^(1/3)*(pi*redmass^2*alpha/4)^(2/3)./Ecol.^(1/3);
+semiclass_elastic=-2*pi/redmass*gamma(-2/3)/3/2^(1/3)*(pi*redmass^2*alpha/4)^(2/3)./Ecol.^(1/3);
 
-semiclass_elastic_He=-4*pi/2/redmassHe*gamma(-2/3)/3/2^(1/3)*(pi*redmassHe^2*alpha_He/4)^(2/3)./Ecol.^(1/3);
+semiclass_elastic_He=-2*pi/redmassHe*gamma(-2/3)/3/2^(1/3)*(pi*redmassHe^2*alpha_He/4)^(2/3)./Ecol.^(1/3);
 
 
 figure(10);clf;% panel (b) of Fig 2 of the paper
